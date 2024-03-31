@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toast Notification</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleToast.css">
 </head>
 <body>
     <div class="toast">
         <div class="toast_content">
-            <img id="toast_svg" src="assets/error-circle.svg">
-            <img id="toast_svg" src="assets/check-circle.svg">
+            <img class="toast_response" src="assets/error-circle.svg">
+            <div class="message">
+                <span class="toast_text toast_text_1"></span>
+                <span class="toast_text toast_text_2"></span>
+            </div>
+            <i class="toast_close">X</i>
+            <div class="toast_progress"></div>
         </div>
     </div>
 
