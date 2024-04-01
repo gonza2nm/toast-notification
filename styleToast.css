@@ -4,7 +4,97 @@
     right: 30px;
     border-radius: 12px;
     background-color: #ffffff;
-    box-shadow: 0 5px 10px rgba(0,0,0,1);
     overflow: hidden;
-    transform: translateX(calc(100% + 30px)); 
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35); 
+}
+.toast.active {
+    transform: translateX(0%);
+}
+.toast .toast_content{
+    display: flex;
+    align-items: center;
+}
+.toast_content .toast_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+}
+.toast_content .toast_message{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+.toast_content .toast_text{
+    font-size: 20px;
+    font-weight: 400;
+    color: #666666;
+}
+.toast_content .toast_text_1{
+    font-weight: 600;
+    color: #333333;
+    padding-top:10px;
+    padding-bottom: 5px;     
+}
+.toast_content .toast_text_2{
+    padding-top:5px;
+    padding-bottom: 10px;
+    margin-right: 30px;
+    font-size: 16px;    
+}
+.toast .toast_close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: .7;    
+}
+.toast .toast_close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: .7;    
+}
+.toast .toast_close:hover{
+    opacity: 1;    
+}
+.toast .toast_progress_check, .toast .toast_progress_error{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;    
+}
+.toast .toast_progress_check::before, .toast .toast_progress_error::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;      
+}
+.toast .toast_progress_check::before{
+    background-color: rgba(51, 204, 51, 1);
+}
+.toast .toast_progress_error::before{
+    background-color: rgba(224, 51, 51, 1);
+}
+
+.toast_progress_check.active::before,.toast_progress_error.active::before{
+    animation: progress 5s linear forwards
+}
+
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
+.toast.active ~ #btn_msg{
+    pointer-events: none;
 }
