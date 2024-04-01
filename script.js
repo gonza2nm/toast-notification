@@ -41,7 +41,7 @@ const checkInformation = () => {
     progress.classList.add("toast_progress_check");
   } else {
     t = "Oops!";
-    msg = "Changes Could Not Be Saved";
+    msg = "Changes could not be saved";
     progress.classList.add("toast_progress_error");
   }
   defineToast(t, msg, checked);
